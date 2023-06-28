@@ -9,9 +9,6 @@ body{
     height: 6em;
   
   }
-  .submit-btn{
-    margin-top: 10px;
-  }
   .token{
     margin-top: 10px;
   }
@@ -147,32 +144,6 @@ body{
   }
   .la{
     padding: 2% 15% 0;
-  }
-  select {
-    width: 200px; /* Set the desired width */
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  /* Style the dropdown arrow */
-  select::-ms-expand {
-    display: none;
-  }
-  select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    font-size: 16px;
-  }
-
-  /* Style when the select tag is focused */
-  select:focus {
-    outline: none;
-    border-color: #4d90fe;
-    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
   }
   /* footer */
   #footer{

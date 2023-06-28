@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test HTML</title>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js" type="module"></script>
+</head>
+<body>
+  <script type="module">
+    const firebaseConfig = {
+      apiKey: "AIzaSyA-A21Vtjar89jAkdTY8bW-hnkoFOV_dp4",
+      authDomain: "mini-project-microp.firebaseapp.com",
+      databaseURL: "https://mini-project-microp-default-rtdb.firebaseio.com",
+      projectId: "mini-project-microp",
+      storageBucket: "mini-project-microp.appspot.com",
+      messagingSenderId: "939049043573",
+      appId: "1:939049043573:web:8a684d34943a55bfa21a3c",
+      measurementId: "G-QRM07X26JX"
+    };
+
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js';
+    import { getDatabase, ref, onValue } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js';
+
+    const firebaseApp = initializeApp(firebaseConfig);
+    const database = getDatabase(firebaseApp);
+
+    
+
+    const fetchCatalog = () => {
+        try {
+            const catalogRef = ref(database, 'crops');
+            onValue(catalogRef, (snapshot) => {
+            const catalogData = snapshot.val();
+
+            // Initialize arrays to store values
+            const addressArray = [];
+            const amountArray = [];
+            const detailArray = [];
+            const endTimeArray = [];
+            const quantityArray = [];
+            const subtitleArray = [];
+            const titleArray = [];
+
+            // Iterate over each crop object
+            Object.values(catalogData).forEach((crop) => {
+                // Extract values from the crop object
+                const { address, amount, detail, endTime, quantity, subtitle, title } = crop;
+
+                // Push the values to respective arrays
+                addressArray.push(address);
+                amountArray.push(amount);
+                detailArray.push(detail);
+                endTimeArray.push(endTime);
+                quantityArray.push(quantity);
+                subtitleArray.push(subtitle);
+                titleArray.push(title);
+            });
+
+            // Print the arrays
+            console.log('Address Array:', addressArray);
+            console.log('Amount Array:', amountArray);
+            console.log('Detail Array:', detailArray);
+            console.log('End Time Array:', endTimeArray);
+            console.log('Quantity Array:', quantityArray);
+            console.log('Subtitle Array:', subtitleArray);
+            console.log('Title Array:', titleArray);
+            });
+        } catch (error) {
+            console.error('Error retrieving data:', error);
+        }
+        };
+
+        fetchCatalog();
+
+  </script>
+</body>
+</html>

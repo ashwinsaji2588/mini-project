@@ -23,7 +23,7 @@
         <div class="container-fluid">
         <!-- navigation bar -->
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand company-name" href="home.html">Microp</a>
+            <a class="navbar-brand company-name" href="/">Microp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,30 +47,36 @@
         <div class="row">
             <div class="col-sm-3">
             </div>
-        <div class="col-sm-6">
-            <h1>Login</h1>
-            <div class="card">
-                <div class="card-body">
-                <!-- Makes POST request to /login route -->
-                <form action="/dashboard.html" method="POST">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="username" required>
+            <div class="col-sm-6">
+                <h1>Register</h1>
+                <div class="card">
+                    <div class="card-body">
+                    <!-- Makes POST request to /register route -->
+                        <form action="/register" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label><br>
+                                <textarea name="address" rows="4" cols="50" class="form-control" required></textarea>
+                                <!--input type="text" class="form-control" name="address"-->
+                            </div>
+                            <button type="submit" class="btn btn-dark form-control submit-btn">Register</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" required>
-                    </div>
-                    <div id="incorect">
-                    </div>
-                    <button type="submit" class="btn btn-dark submit-btn">Login</button>
-                </form>
                 </div>
             </div>
         </div>
-        </div>
-  </div>
-  <br><br><br><br><br><br><br><br>
+    </div>
 
     <footer id="footer">
         <br>
